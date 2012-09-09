@@ -1,3 +1,4 @@
+function[A] = RV2COE(R, V, MU)
 % function[A] = RVtoCOEs(R, V, MU)
 % Inputs:
 %      R  = [Ri, Rj, Rk] (radius vector)
@@ -12,8 +13,6 @@
 %           arg, (argument of perigee)
 %           true (true anomaly) ]
 % Note: All angles are given in radians
-
-function[A] = RVtoCOEs(R, V, MU)
 
 r = norm(R);
 energy=norm(V)^2/2 - MU/r;
