@@ -1,7 +1,7 @@
 function [dr] = nbody3(t,r0,MU)
 %
 % Inputs:  t - time
-%          r0 - positions and velocities in 2D of vehicle, sun, and planets
+%          r0 - positions and velocities in 3D of vehicle, sun, and planets
 %        
 %          r0 = [Xv0, Yv0, Zv0, Uv0, Vv0, Wv0, Xs0, Ys0, Zv0, Us0, Vs0, Ws0, Xp1_0, Yp1_0, etc...]'
 %          MU  = [MUv, MUs, MUp1, MUp2, etc...]'
