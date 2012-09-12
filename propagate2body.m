@@ -15,7 +15,9 @@ cosE = (A(2) + cos(A(6)))/(1 + A(2)*cos(A(6)));
 sinE = (sin(A(6))*sqrt(1 - A(2)^2))/(1 + A(2)*cos(A(6)));
 E = atan2(sinE,cosE);
 if(E < 0)
-    E = 2*pi - E;
+    E = 2*pi + E;
+elseif( E > 2*pi )
+    E = E - 2*piE;
 end
 
 % Calculate mean anomaly:
@@ -29,13 +31,13 @@ t = (M/n);
 % Calculate new time:
 t = t + dt;
 if(t < 0)
-    t = P-t;
+    t = P + t;
 elseif(t > P)
     t = t - P;
 end
 
 % Calculate new mean anomaly:
-M = E - A(2)*sin(E);
+M = n*t;
 
 % Calculate new eccentric anomaly:
 E = M2E(M,A(2));
@@ -44,6 +46,11 @@ E = M2E(M,A(2));
 cosTheta = (cos(E) - A(2))/(1 - A(2)*cos(E));
 sinTheta = (sin(E)*sqrt(1-A(2)^2))/(1 - A(2)*cos(E));
 A(6) = atan2(sinTheta,cosTheta);
+if(A(6) < 0)
+    A(6) = 2*pi + A(6);
+elseif( A(6) > 2*pi )
+    A(6) = A(6) - 2*pi;
+end
 
 end
 
