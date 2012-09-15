@@ -1,4 +1,4 @@
-function [A,t1,t2] = propagate2body(A0,dt,mu)
+function [A] = propagate2body(A0,dt,mu)
 %
 %      A = [a, (semi major axis)
 %           e, (eccentricity)
