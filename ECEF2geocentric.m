@@ -25,9 +25,9 @@ lat = asin(R(3)/r);
 cosLon = R(1)/(r*cos(lat));
 sinLon = R(2)/(r*cos(lat));
 lon = atan2(sinLon,cosLon);
-if( lon < 0 )
-    lon = lon + 2*pi;
-end
+% if( lon < 0 )
+%     lon = lon + 2*pi;
+% end
 
 
 end
