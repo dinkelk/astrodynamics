@@ -1,3 +1,4 @@
+function[RIJK,VIJK] = COE2RV(A,MU)
 %  function[RIJK,VIJK] = COEstoRV(A)
 %
 %      R = [Ri, Rj, Rk] (radius vector)
@@ -10,8 +11,6 @@
 %           arg, (argument of perigee)
 %           true (true anomaly) ]
 %
-
-function[RIJK,VIJK] = COE2RV(A,MU)
 
    %%% Parse out orbital elements %%%
    semi = A(1);

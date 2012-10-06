@@ -1,4 +1,4 @@
-function A = TLE2COE( TLE, mu )
+function [A, JD] = TLE2COE( TLE, mu )
 % Inputs:
 %      TLE = 2 row cell string. Each entry containing a TLE parameter
 %      MU = Gravitational Parameter
@@ -38,6 +38,21 @@ if(A(6) < 0)
 elseif( A(6) > 2*pi )
     A(6) = A(6) - 2*pi;
 end
+
+% Extract the time:
+time = TLE{1,4};
+if(str2double(time(1:2)) > 60)
+    year = str2double(['19',time(1:2)]);
+else
+    year = str2double(['20',time(1:2)]);
+end
+
+dayofyear = str2double(time(3:5));
+fracofday = str2double(['0',time(6:end)]);
+
+% Convert to Julian Date
+[year, month, day, hour, minute, second] = dayofyear2date(dayofyear,year);
+JD = date2jd(year, month, day, hour, minute, second) + fracofday;
 
 end
 
