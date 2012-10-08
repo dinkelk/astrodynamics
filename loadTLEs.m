@@ -12,7 +12,7 @@ while ~feof(fd)
    line = fgetl(fd);
    
    % Parse line:
-   parsed_line = regexp(line,' ','split');
+   parsed_line = regexp(line,'(\s)+','split');
    if(strcmp(parsed_line(1),'1'))
         line1 = parsed_line;
         
@@ -21,7 +21,7 @@ while ~feof(fd)
         line = fgetl(fd);
         
         % Parse line:
-        parsed_line = regexp(line,' ','split');
+        parsed_line = regexp(line,'(\s)+','split');
         if(strcmp(parsed_line(1),'2'))
             line2 = parsed_line;
         else
