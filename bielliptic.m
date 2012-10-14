@@ -2,7 +2,8 @@ function [dV, TOF] = bielliptic(r1,r2,rb,mu)
 %
 % Description: Assuming circular orbits of radius r1 and r2 around the
 % central body described by mu, a bielliptic transfer from r1 to r2 is
-% calculated through the bielliptic radius rb. The total deltaV and time of flight are output.
+% calculated through the bielliptic radius rb. The total deltaV and 
+% time of flight are output.
 %
 % Input:  r1  = radius of orbit 1
 %         r2  = radius of orbit 2

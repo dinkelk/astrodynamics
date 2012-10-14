@@ -8,6 +8,13 @@ rf = norm(Rf);
 cosdV = dot(R0,Rf)/(r0*rf);
 c = sqrt(r0^2 + rf^2 - 2*r0*rf*cosdV);
 
+% Solve for our transfer method:
+if(acos(cosdV) <= pi)
+    tm = 1; % Short transfer (< 180 deg)
+else
+    tm = -1; % Long transfer (> 180 deg)
+end
+
 % Solve for the semiperimeter:
 s = (r0 + rf + c)/2;
 
@@ -27,7 +34,7 @@ a = s/2;
 dt = sqrt(a^3/mu)*(pi - Be + sin(Be));
 
 % Solve for the initial velocity:
-sindV =  dt*sqrt(1-cosdV^2);
-V0 = sqrt(mu*p)/(r0*rf*sindV) * (Rf - (1 - rf/p*(1-cosdV)*R0));
+sindV =  tm*sqrt(1-cosdV^2);
+V0 = sqrt(mu*p)/(r0*rf*sindV) * (Rf - (1 - rf/p*(1-cosdV))*R0);
 
 end
