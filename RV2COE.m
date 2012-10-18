@@ -1,4 +1,4 @@
-function[A] = RV2COE(R, V, MU)
+function [A] = RV2COE(R, V, MU)
 % function[A] = RVtoCOEs(R, V, MU)
 % Inputs:
 %      R  = [Ri, Rj, Rk] (radius vector)
