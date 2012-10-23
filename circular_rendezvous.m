@@ -20,7 +20,7 @@ function [dV, TOF, theta, t_wait, SP] = ...
 %
 
 % Calculate the orbital rotation rates:
-w_tgt = sqrt(mu/a_tgt^3);
+w_tgt = sqrt(mu/a_tgt^3)
 w_int = sqrt(mu/a_int^3);
 
 % Calculate the synodic period:
@@ -34,7 +34,7 @@ TOF = pi*sqrt(a^3/mu);
 
 % Calculate the lead angle the target satellite must have for the transfer
 % to take place:
-alpha = w_tgt*TOF;
+alpha = w_tgt*TOF
 
 % Calculate the phasing angle for the target satellite:
 theta = alpha - pi;

@@ -17,16 +17,16 @@ function [az,el,rho] = SEZ2AzElRange(R)
 
 % Calculate range:
 rho = norm(R);
-SEnorm = sqrt(R(1)^2 + R(2)^2);
+rhoSE = sqrt(R(1)^2 + R(2)^2);
 
 % Calculate elevation:
 sinEl = R(3)/rho;
-cosEl = SEnorm/rho;
+cosEl = rhoSE/rho;
 el = atan2(sinEl,cosEl);
 
 % Calculate azimuth:
-sinAz = R(2)/SEnorm;
-cosAz = -R(1)/SEnorm;
+sinAz = R(2)/rhoSE;
+cosAz = -R(1)/rhoSE;
 az = atan2(sinAz,cosAz);
 
 % Put azimuth in the range 0 to 2*pi:
