@@ -38,11 +38,11 @@ end
 
 % Calculate variations due to J2:
 dA = zeros(6,1);
-p = 1 - A(2)^2;
+p = A(1)*(1 - A(2)^2); % Semi-parameter
 C = 3*n*Re^2*J2/(2*p^2);
 dA(4) = -C*cos(A(3));
 dA(5) = C/2*(4-5*sin(A(3))^2);
-M_dot = -C/2*sqrt(p)*(3*sin(A(3))-2);
+M_dot = -C/2*sqrt(1 - A(2)^2)*(3*sin(A(3))^2-2);
 
 % Calculate new mean anomaly:
 M = n*t;
