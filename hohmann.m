@@ -1,4 +1,4 @@
-function [dV1, dV2, TOF] = hohmann(r1,r2,mu)
+function [dV, TOF] = hohmann(r1,r2,mu)
 %
 % Description: Assuming circular orbits of radius r1 and r2 around the
 % central body described by mu, a hohmann transfer from r1 to r2 is
