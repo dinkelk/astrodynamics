@@ -1,4 +1,4 @@
-function [dv1,dv2,TOF] = patchedconic(a1, a2, r1, r2, mu1, mu2, muS)
+function [dv1,dv2,TOF] = patchedconics(a1, a2, r1, r2, mu1, mu2, muS)
 %
 % Description: Assuming circular planetary orbits of radius a1 and a2
 % around a central body described by muS, with circular parking orbits at
