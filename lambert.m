@@ -50,12 +50,14 @@ function [V0,Vf] = lambert(R0,Rf,dt0,MU)
     else
         DM = -1;
     end
-    
+
     A = DM*sqrt(r0*rf*(1+cosnu));
 
     % Check input:
     if( delta_nu == 0 || A == 0 )
         disp('delta_nu = 0 || A = 0, Trajectory cannot be computed.');
+        V0 = nan;
+        Vf = nan;
         return
     end
     

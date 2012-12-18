@@ -24,10 +24,10 @@ TOF = (k_tgt*2*pi + theta) / w;
 a = (mu*(TOF/(k_int*2*pi))^2)^(1/3);
 
 % Calculate the velocities:
-Vphase = sqrt(2*mu/a_tgt - mu/a)
-Vint = sqrt(mu/a_tgt)
+Vphase = sqrt(2*mu/a_tgt - mu/a);
+Vint = sqrt(mu/a_tgt);
 
 % Calculate the total dV:
-dV = 2*abs(Vphase - Vint)
+dV = 2*abs(Vphase - Vint);
 
 end

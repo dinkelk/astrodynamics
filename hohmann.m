@@ -20,7 +20,7 @@ function [dV, TOF] = hohmann(r1,r2,mu)
     
     % Calculate the velocities of the transfer orbit:
     v1t = sqrt(2*mu/r1 - mu/a);
-    v2t = sqrt(2*mu/r2 - mu/a);
+    v2t = sqrt(2*mu/r2 - mu/a)
     
     % Calculate the deltaV at each r1 and r2:
     dv1 = abs(v1t - v1);
