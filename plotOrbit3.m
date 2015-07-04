@@ -1,7 +1,7 @@
-function plotOrbit(fignum, R)
+function plotOrbit3(fignum, R, hue)
 
 % Create figure to plot into
-fignum = figure; hold on;
+hold on;
 
 % Load the basic MATLAB earth topographic data
 load('topo.mat','topo','topomap1');
@@ -38,10 +38,11 @@ light('position',[-1.5 0.5 -0.5], 'color', [.6 .2 .2]);
 
 % Plot the satellite trajectory
 hold on
-plot3(R(1,:),R(2,:),R(3,:),'c', 'LineWidth', 3);
+plot3(R(1,:),R(2,:),R(3,:), hue, 'LineWidth', 3);
 
 % Set the view.
 axis square off
+axis equal
 
 % Make a black sky:
 whitebg(fignum,'k');
